@@ -26,6 +26,17 @@ app.post('/todos', (req, res) => {
         });
 });
 
+// list todo handler
+app.get('/todos', (req, res) => {
+    Todo.find()
+        .then((todos) => {
+            res.send({ todos });
+        })
+        .catch((err) => {
+            res.status(400).send(err);
+        });
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
