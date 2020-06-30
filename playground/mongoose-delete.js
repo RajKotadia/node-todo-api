@@ -5,23 +5,23 @@ const Todo = require('./../server/models/Todo');
 
 // model.deleteMany() / model.deleteMany({}) - Empty object removes every document
 // model.deleteMany({key: value}) - Removes all the docs that staisfy the condition
-// Todo.deleteMany()
-//     .then((result) => {
-//         console.log('Deleted all todos', result);
-//     })
-//     .catch((err) => {
-//         console.log('Unable to delete', err);
-//     });
+Todo.deleteMany()
+    .then((result) => {
+        console.log('Deleted all todos', result);
+    })
+    .catch((err) => {
+        console.log('Unable to delete', err);
+    });
 
 // model.deleteOne({key: value}) - specific doc
 // model.deleteOne({}) / model.deleteOne() - first doc
-// Todo.deleteOne()
-//     .then((result) => {
-//         console.log('Deleted todo', result);
-//     })
-//     .catch((err) => {
-//         console.log('Unable to delete', err);
-//     });
+Todo.deleteOne()
+    .then((result) => {
+        console.log('Deleted todo', result);
+    })
+    .catch((err) => {
+        console.log('Unable to delete', err);
+    });
 
 // model.findOneAndDelete() - deletes and returns the doc
 Todo.findOneAndDelete({ text: 'Hello world' })
