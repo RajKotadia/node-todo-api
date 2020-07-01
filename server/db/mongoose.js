@@ -1,10 +1,8 @@
+const { mongoURI } = require('./../config/config');
+
 const mongoose = require('mongoose');
-const { eventNames } = require('../models/Todo');
 
 // setting up the config
-const dbName = 'TodoApp';
-const mongoURI =
-    process.env.MONGODB_URI || `mongodb://localhost:27017/${dbName}`;
 const mongoClientOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
