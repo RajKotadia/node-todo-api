@@ -15,7 +15,13 @@ const authenticate = async (req, res, next) => {
         // verify the token
         const { _id } = jwt.verify(token, process.env.JWT_SECRET);
 
-        // if the token is valid and the
+        // check if the user exists
+        const userExists = await User.findOne({ _id });
+        if (!userExists) {
+            return res.status(401).json('Unauthorized access');
+        }
+
+        // if the user exists and token is valid
         req.userId = _id;
         next();
     } catch (err) {
