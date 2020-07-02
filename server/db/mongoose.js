@@ -7,6 +7,7 @@ const mongoClientOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+    useCreateIndex: true,
 };
 
 // making a connection to the mongoDB server
